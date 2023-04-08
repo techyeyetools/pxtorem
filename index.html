@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Ultimate PX to REM Converter and REM to PX Converter</title>
+    <meta name="description" content="Convert PX to REM and REM to PX with ease using our tool. Achieve pixel-perfect designs in just a few clicks. Try it now!">
+    <meta name="keywords" content="px to rem converter, rem to px converter, px to rem, rem to px, 24px to rem">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How many pixels is a rem?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A rem (root em) is not a fixed value in pixels as it is relative to the font size declared on the <html> element. By default, 1 rem is equal to 16 pixels, but this value can be changed by the user in their browser settings or by web developers through CSS or HTML. Therefore, the number of pixels in a rem varies depending on the base font size declared."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the formula to convert px to rem?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "rem = px / base font size where \"px\" is the value in pixels that you want to convert to rem, and \"base font size\" is the font size declared on the <html> element in CSS. By dividing the pixel value by the base font size in pixels, you will get the corresponding value in rem units."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is 1 rem equal to 16px?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "By default, 1 rem (root em) is equal to 16 pixels. However, the exact value of 1 rem may vary depending on the base font size declared on the <html> element in CSS. This default value of 16 pixels per rem is commonly used as a starting point for responsive web design."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is 1 rem in mobile?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The value of 1 rem (root em) in mobile devices can vary depending on the device and its settings. However, by default, 1 rem is equal to 16 pixels, regardless of the device."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How many pixels is 1.6 rem?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "To determine the exact pixel value of 1.6 rem (root em), you need to know the base font size declared on the <html> element in CSS. Assuming the default base font size of 16 pixels, 1.6 rem would be equal to 25.6 pixels (16 x 1.6 = 25.6)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "When to use px vs em vs rem?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You should use pixels (px) when you want a fixed size that stays the same on all devices. Use em (em) when you want a size relative to the font size of the parent element. On the other hand, rem (root em) is best used when you want a size relative to the base font size of the document, making it a good option for responsive design."
+              }
+            },
+            {
+                "@type": "Question",
+                "name": "Why to use rem instead of px?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "If you're wondering whether to use rem or px for your web design, choosing rem (root em) over px (pixels) can be a great idea. The reason is that rem is a flexible unit that adjusts to the base font size of the document, making your website more responsive and adaptable to different screen sizes and devices. This makes it easier to resize all elements on a page simultaneously. On the other hand, px is a fixed-size unit that can lead to inconsistent design across devices. Plus, rem makes your code easier to maintain and update in the long run."
+                }
+              }
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "PX to REM Converter",
+          "description": "Convert PX to REM and REM to PX with ease using our tool.",
+          "url": "https://www.example.com/px-to-rem-converter/",
+          "applicationCategory": "Web Design",
+          "operatingSystem": "Web",
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+          },
+          "creator": {
+            "@type": "Person",
+            "name": "Mohd Rahil"
+          }
+        }
+        </script>
+        
+        
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="privacy-policy.html">privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+        </ul>
+    </nav>
+    <div class="box">
+        <div class="square" style="--i:0;"></div>
+        <div class="square" style="--i:1;"></div>
+        <div class="square" style="--i:2;"></div>
+        <div class="square" style="--i:3;"></div>
+        <div class="square" style="--i:4;"></div>
+        <div class="square" style="--i:5;"></div>
+
+        <div class="container">
+            <div class="card">
+                <h1>Pixel to Rem Converter</h1>
+                <p>Based on a root font-size of
+                    <input type="text" value="16" id="base-value">
+
+
+                    pixel.
+                </p>
+                <div>
+                    <label for="px-input" class="input-label">Enter value in pixels:</label>
+                    <input type="number" id="px" value="10">
+                    <div class="error" id="px-error"></div>
+                </div>
+                <div>
+                    <label for="rem-input" class="input-label">Enter value in rems:</label>
+                    <input type="number" id="rem" value="0.063">
+                    <div class="error" id="rem-error"></div>
+                </div>
+                <div class="result">
+                    <label class="result-label">Result:</label>
+                    <input type="text" id="result" class="result-field" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="content-container">
+        <h2>Px (Pixel) To Rem Converter </h2>
+        <P>Welcome to px to rem Converter. Your on the go web app for converting pixels to rems quickly and easily. Our website offers a free and user friendly tool that allows you to convert px to rem and vice versa, giving you greater flexibility and scalability in your web designs.</P>
+        <p>But wait, there's more! Not only is our tool easy to use, but it's also completely free. Yes, you heard it right, FREE! We believe that web design should be accessible to everyone, regardless of their financial status, which is why we offer this tool at no cost to our users. Moreover, we understand the importance of speed and efficiency when it comes to web design, which is why our converter tool is lightning fast, so you can get back to creating great designs in no time.</p>
+        <p>If you're a web developer, you know how important it is to ensure that your website is responsive and accessible across all devices. One of the key aspects of this is using the right CSS units, and in particular, converting pixels to REM.
+        </p>
+        <h3>Converting Pixels to REM with Ease</h3>
+        <p>The process of converting pixels to REM may seem tough at first, but with the right tool, it can be done in just a few clicks. Our calculator takes the default font-size of 16 pixels, but you can chage it.</p>
+        <p>To get started, simply enter the number of pixels you want to convert in the first field. The calculator will instantly display the equivalent value in REM in the second field. If you need to convert in the opposite direction, simply change the input field and the calculator will adjust accordingly.</p>
+        <h3>EM vs. REM: What's the Real Difference?</h3>
+        <p>Are you confused about the difference between EM and REM units? Don't worry, you're not alone. Although these units may seem similar, there are some important distinctions you should be aware of.</p>
+        <h3>EM vs. REM: Understanding the Key Differences</h3>
+        <p>The primary difference between EM and REM is how they are measured. EM is relative to the font-size of the element it's used in, while REM is relative to the root element. This means that if you use EM units in nested elements, the size of the text can become increasingly small or large as you go deeper into the hierarchy. In contrast, REM units are always relative to the root element, ensuring consistency throughout the page.</p>
+        <h2>Understanding the Formula for Converting PX to REM</h2>
+        <p>If you prefer to compute REM values manually, you can use the following formula:
+            rem = px / base font size
+            For example, if your base font size is 16px, and you want to convert a value of 64px to REM, you can use the formula as follows:
+            rem = 64 / 16
+            rem = 4
+            So, the equivalent REM value for 64px is 4rem.
+            </p>
+
+
+
+        <h2>Pixel to Rem Conversion for Popular Font Sizes</h2>
+        <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Pixel (px)</th>
+                    <th>Rem (rem)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12px</td>
+                    <td>0.75rem</td>
+                    <td>Typically used for small text or icons.</td>
+                </tr>
+                <tr>
+                    <td>14px</td>
+                    <td>0.875rem</td>
+                    <td>Commonly used for body text.</td>
+                </tr>
+                <tr>
+                    <td>16px</td>
+                    <td>1rem</td>
+                    <td>The default font size for most browsers.</td>
+                </tr>
+                <tr>
+                    <td>18px</td>
+                    <td>1.125rem</td>
+                    <td>Used for subheadings or larger body text.</td>
+                </tr>
+                <tr>
+                    <td>20px</td>
+                    <td>1.25rem</td>
+                    <td>Used for headings or larger text blocks.</td>
+                </tr>
+                <tr>
+                    <td>24px</td>
+                    <td>1.5rem</td>
+                    <td>Used for large headings or section titles.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+        <h2>Complete PX to REM Conversion Table for 1 to 100</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Pixel</th>
+                    <th>Rem</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1px</td>
+                    <td>0.063rem</td>
+                </tr>
+                <tr>
+                    <td>2px</td>
+                    <td>0.125rem</td>
+                </tr>
+                <tr>
+                    <td>3px</td>
+                    <td>0.188rem</td>
+                </tr>
+                <tr>
+                    <td>4px</td>
+                    <td>0.250rem</td>
+                </tr>
+                <tr>
+                    <td>5px</td>
+                    <td>0.313rem</td>
+                </tr>
+                <tr>
+                    <td>6px</td>
+                    <td>0.375rem</td>
+                </tr>
+                <tr>
+                    <td>7px</td>
+                    <td>0.438rem</td>
+                </tr>
+                <tr>
+                    <td>8px</td>
+                    <td>0.500rem</td>
+                </tr>
+                <tr>
+                    <td>9px</td>
+                    <td>0.563rem</td>
+                </tr>
+                <tr>
+                    <td>10px</td>
+                    <td>0.625rem</td>
+                </tr>
+                <tr>
+                    <td>11px</td>
+                    <td>0.688rem</td>
+                </tr>
+                <tr>
+                    <td>12px</td>
+                    <td>0.750rem</td>
+                </tr>
+                <tr>
+                    <td>13px</td>
+                    <td>0.813rem</td>
+                </tr>
+                <tr>
+                    <td>14px</td>
+                    <td>0.875rem</td>
+                </tr>
+                <tr>
+                    <td>15px</td>
+                    <td>0.938rem</td>
+                </tr>
+                <tr>
+                    <td>16px</td>
+                    <td>1.000rem</td>
+                </tr>
+                <tr>
+                    <td>17px</td>
+                    <td>1.063rem</td>
+                </tr>
+                <tr>
+                    <td>18px</td>
+                    <td>1.125rem</td>
+                </tr>
+                <tr>
+                    <td>19px</td>
+                    <td>1.188rem</td>
+                </tr>
+                <tr>
+                    <td>20px</td>
+                    <td>1.250rem</td>
+                </tr>
+                <tr>
+                    <td>21px</td>
+                    <td>1.313rem</td>
+                </tr>
+                <tr>
+                    <td>22px</td>
+                    <td>1.375rem</td>
+                </tr>
+                <tr>
+                    <td>23px</td>
+                    <td>1.438rem</td>
+                </tr>
+                <tr>
+                    <td>24px</td>
+                    <td>1.500rem</td>
+                </tr>
+                <tr>
+                    <td>25px</td>
+                    <td>1.563rem</td>
+                </tr>
+                <tr>
+                    <td>26px</td>
+                    <td>1.625rem</td>
+                </tr>
+                <tr>
+                    <td>27px</td>
+                    <td>1.688rem</td>
+                </tr>
+                <tr>
+                    <td>28px</td>
+                    <td>1.750rem</td>
+                </tr>
+                <tr>
+                    <td>29px</td>
+                    <td>1.813rem</td>
+                </tr>
+                <tr>
+                    <td>30px</td>
+                    <td>1.875rem</td>
+                </tr>
+                <tr>
+                    <td>31px</td>
+                    <td>1.938rem</td>
+                </tr>
+                <tr>
+                    <td>32px</td>
+                    <td>2.000rem</td>
+                </tr>
+                <tr>
+                    <td>33px</td>
+                    <td>2.063rem</td>
+                </tr>
+                <tr>
+                    <td>34px</td>
+                    <td>2.125rem</td>
+                </tr>
+                <tr>
+                    <td>35px</td>
+                    <td>2.188rem</td>
+                </tr>
+                <tr>
+                    <td>36px</td>
+                    <td>2.250rem</td>
+                </tr>
+                <tr>
+                    <td>37px</td>
+                    <td>2.313rem</td>
+                </tr>
+                <tr>
+                    <td>38px</td>
+                    <td>2.375rem</td>
+                </tr>
+                <tr>
+                    <td>39px</td>
+                    <td>2.438rem</td>
+                </tr>
+                <tr>
+                    <td>40px</td>
+                    <td>2.500rem</td>
+                </tr>
+                <tr>
+                    <td>41px</td>
+                    <td>2.563rem</td>
+                </tr>
+                <tr>
+                    <td>42px</td>
+                    <td>2.625rem</td>
+                </tr>
+                <tr>
+                    <td>43px</td>
+                    <td>2.688rem</td>
+                </tr>
+                <tr>
+                    <td>44px</td>
+                    <td>2.750rem</td>
+                </tr>
+                <tr>
+                    <td>45px</td>
+                    <td>2.813rem</td>
+                </tr>
+                <tr>
+                    <td>46px</td>
+                    <td>2.875rem</td>
+                </tr>
+                <tr>
+                    <td>47px</td>
+                    <td>2.938rem</td>
+                </tr>
+                <tr>
+                    <td>48px</td>
+                    <td>3.000rem</td>
+                </tr>
+                <tr>
+                    <td>49px</td>
+                    <td>3.063rem</td>
+                </tr>
+                <tr>
+                    <td>50px</td>
+                    <td>3.125rem</td>
+                </tr>
+                <tr>
+                    <td>51px</td>
+                    <td>3.188rem</td>
+                </tr>
+                <tr>
+                    <td>52px</td>
+                    <td>3.250rem</td>
+                </tr>
+                <tr>
+                    <td>53px</td>
+                    <td>3.313rem</td>
+                </tr>
+                <tr>
+                    <td>54px</td>
+                    <td>3.375rem</td>
+                </tr>
+                <tr>
+                    <td>55px</td>
+                    <td>3.438rem</td>
+                </tr>
+                <tr>
+                    <td>56px</td>
+                    <td>3.500rem</td>
+                </tr>
+                <tr>
+                    <td>57px</td>
+                    <td>3.563rem</td>
+                </tr>
+                <tr>
+                    <td>58px</td>
+                    <td>3.625rem</td>
+                </tr>
+                <tr>
+                    <td>59px</td>
+                    <td>3.688rem</td>
+                </tr>
+                <tr>
+                    <td>60px</td>
+                    <td>3.750rem</td>
+                </tr>
+                <tr>
+                    <td>61px</td>
+                    <td>3.813rem</td>
+                </tr>
+                <tr>
+                    <td>62px</td>
+                    <td>3.875rem</td>
+                </tr>
+                <tr>
+                    <td>63px</td>
+                    <td>3.938rem</td>
+                </tr>
+                <tr>
+                    <td>64px</td>
+                    <td>4.000rem</td>
+                </tr>
+                <tr>
+                    <td>65px</td>
+                    <td>4.063rem</td>
+                </tr>
+                <tr>
+                    <td>66px</td>
+                    <td>4.125rem</td>
+                </tr>
+                <tr>
+                    <td>67px</td>
+                    <td>4.188rem</td>
+                </tr>
+                <tr>
+                    <td>68px</td>
+                    <td>4.250rem</td>
+                </tr>
+                <tr>
+                    <td>69px</td>
+                    <td>4.313rem</td>
+                </tr>
+                <tr>
+                    <td>70px</td>
+                    <td>4.375rem</td>
+                </tr>
+                <tr>
+                    <td>71px</td>
+                    <td>4.438rem</td>
+                </tr>
+                <tr>
+                    <td>72px</td>
+                    <td>4.500rem</td>
+                </tr>
+                <tr>
+                    <td>73px</td>
+                    <td>4.563rem</td>
+                </tr>
+                <tr>
+                    <td>74px</td>
+                    <td>4.625rem</td>
+                </tr>
+                <tr>
+                    <td>75px</td>
+                    <td>4.688rem</td>
+                </tr>
+                <tr>
+                    <td>76px</td>
+                    <td>4.750rem</td>
+                </tr>
+                <tr>
+                    <td>77px</td>
+                    <td>4.813rem</td>
+                </tr>
+                <tr>
+                    <td>78px</td>
+                    <td>4.875rem</td>
+                </tr>
+                <tr>
+                    <td>79px</td>
+                    <td>4.938rem</td>
+                </tr>
+                <tr>
+                    <td>80px</td>
+                    <td>5.000rem</td>
+                </tr>
+                <tr>
+                    <td>81px</td>
+                    <td>5.063rem</td>
+                </tr>
+                <tr>
+                    <td>82px</td>
+                    <td>5.125rem</td>
+                </tr>
+                <tr>
+                    <td>83px</td>
+                    <td>5.188rem</td>
+                </tr>
+                <tr>
+                    <td>84px</td>
+                    <td>5.250rem</td>
+                </tr>
+                <tr>
+                    <td>85px</td>
+                    <td>5.313rem</td>
+                </tr>
+                <tr>
+                    <td>86px</td>
+                    <td>5.375rem</td>
+                </tr>
+                <tr>
+                    <td>87px</td>
+                    <td>5.438rem</td>
+                </tr>
+                <tr>
+                    <td>88px</td>
+                    <td>5.500rem</td>
+                </tr>
+                <tr>
+                    <td>89px</td>
+                    <td>5.563rem</td>
+                </tr>
+                <tr>
+                    <td>90px</td>
+                    <td>5.625rem</td>
+                </tr>
+                <tr>
+                    <td>91px</td>
+                    <td>5.688rem</td>
+                </tr>
+                <tr>
+                    <td>92px</td>
+                    <td>5.750rem</td>
+                </tr>
+                <tr>
+                    <td>93px</td>
+                    <td>5.813rem</td>
+                </tr>
+                <tr>
+                    <td>94px</td>
+                    <td>5.875rem</td>
+                </tr>
+                <tr>
+                    <td>95px</td>
+                    <td>5.938rem</td>
+                </tr>
+                <tr>
+                    <td>96px</td>
+                    <td>6.000rem</td>
+                </tr>
+                <tr>
+                    <td>97px</td>
+                    <td>6.063rem</td>
+                </tr>
+                <tr>
+                    <td>98px</td>
+                    <td>6.125rem</td>
+                </tr>
+                <tr>
+                    <td>99px</td>
+                    <td>6.188rem</td>
+                </tr>
+                <tr>
+                    <td>100px</td>
+                    <td>6.250rem</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Why Rem Units in Web Designing are Better than Pixels for Designers</h2>
+<p>When it comes to web designing, choosing the right unit of measurement for your designs is crucial. For many years, designers have relied on pixels (px) as the go-to unit for measuring and defining the size of elements on a web page. However, with the rise of responsive web design, accessibility, and user preferences, using Rem units may be a better option.</p>
+<h3>What are Pixel Units?</h3>
+<p>Pixels are an absolute unit, meaning that they are based on the physical size of the screen. One pixel is equal to one dot on the screen, and the size of that dot is determined by the resolution of the screen.</p>
+<h3>What are Rem Units?</h3>
+<p>Rem stands for &quot;root em&quot; and is a relative unit of measurement that is based on the font-size of the root element of the document. This means that if the font-size of the root element is set to 16px, 1rem is equal to 16px. If the font-size is changed to 20px, 1rem becomes 20px. Unlike pixels, Rem units are scalable and change based on the user&apos;s device and preferences.</p>
+<h3>Why are Rem Units Better than Pixels?</h3>
+<h4>Accessibility</h4>
+<p>One of the main advantages of using Rem units is accessibility. By using Rem units, you can ensure that your web designs are accessible to everyone, regardless of their visual abilities or preferences. Users who need to increase the font size of your website can do so without affecting the layout of the page.</p>
+<h4>Responsiveness</h4>
+<p>Another advantage of using Rem units is responsiveness. With the increasing number of devices and screen sizes available, it&apos;s important to create designs that can adapt to different devices and resolutions. By using Rem units, you can create designs that are flexible and responsive, and that look great on all devices, from desktops to mobile phones.</p>
+<h4>Consistency</h4>
+<p>Using Rem units also ensures consistency across your designs. Because Rem units are based on the root font size. They remain consistent throughout your design, regardless of the element or device. This means that you can ensure that your designs are uniform and that elements are aligned correctly.</p>
+<h3>How to Use Rem Units in Web Designing</h3>
+<p>Using Rem units in web designing is relatively easy. Instead of defining the size of your elements in pixels, you can use Rem units. For example, instead of defining the font-size of a paragraph as 16px, you can define it as 1rem.</p>
+<p>In Figma, you can set the font-size of your elements in Rem units by clicking on the &quot;px&quot; dropdown menu in the properties panel and selecting &quot;rem.&quot; You can also use the formula &quot;font-size: x / y rem&quot; in your CSS to define the font-size of your elements in Rem units.</p>
+<p><br></p>
+<h3>Where You Can Use Rem</h3>
+<p>We would recommend using Rem units in web designing when you want to ensure that your designs are accessible and responsive across different devices and user preferences.</p>
+<p>For example, if you want to ensure that the font size of your text remains consistent across different devices and user preferences, you can use Rem units to set the font size. This is because Rem units are relative to the root font size, which can be easily adjusted using CSS media queries.</p>
+<p><br></p>
+<h2>Pros and Cons of Using Px vs Rems.</h2>
+<p><br></p>
+<h3>Pros of Using Px:</h3>
+<ul>
+    <li>
+        <p>Fixed Size: Using px means that you can set a precise size for elements on your webpage.</p>
+    </li>
+    <li>
+        <p>Compatibility: Px works well on all browsers and devices, so your webpage will look the same across platforms.</p>
+    </li>
+</ul>
+<h3>Cons of Using Px:</h3>
+<ul>
+    <li>
+        <p>Not Scalable: Px is not scalable, which means that the size of elements will remain fixed even if the user zooms in or out or changes the font size. This can make it harder for some users to read the text.</p>
+    </li>
+    <li>
+        <p>Limited Flexibility: The fixed size of elements can make it challenging to adapt the design to different screen sizes.</p>
+    </li>
+</ul>
+<h3>Pros of Using Rem:</h3>
+<ul>
+    <li>
+        <p>Scalable: Rem is scalable, so the size of elements adjusts based on the user&apos;s font size or zoom level.</p>
+    </li>
+    <li>
+        <p>Flexibility: Rem provides greater design flexibility because elements are relative to the root font size, making it easier to adapt to different screen sizes.</p>
+    </li>
+</ul>
+<h3>Cons of Using Rem:</h3>
+<ul>
+    <li>
+        <p>Inconsistency: Different devices have different default font sizes, which can cause elements to appear differently on various devices.</p>
+    </li>
+    <li>
+        <p>Learning Curve: It may take some time to get used to using a relative unit of measurement like rem, making it more challenging to use than px.</p>
+    </li>
+</ul>
+<p><br></p>
+<div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="question">How many pixels is a rem?</div>
+    <div class="answer">A rem (root em) is not a fixed value in pixels as it is relative to the font size declared on the &lt;html&gt; element. By default, 1 rem is equal to 16 pixels, but this value can be changed by the user in their browser settings or by web developers through CSS or HTML. Therefore, the number of pixels in a rem varies depending on the base font size declared.</div>
+    <div class="question">What is the formula to convert px to rem?</div>
+    <div class="answer">rem = px / base font size
+    where "px" is the value in pixels that you want to convert to rem, and "base font size" is the font size declared on the &lt;html&gt; element in CSS. By dividing the pixel value by the base font size in pixels, you will get the corresponding value in rem units.</div>
+
+    <div class="question">Is 1 rem equal to 16px?</div>
+    <div class="answer">By default, 1 rem (root em) is equal to 16 pixels. However, the exact value of 1 rem may vary depending on the base font size declared on the &lt;html&gt; element in CSS. This default value of 16 pixels per rem is commonly used as a starting point for responsive web design.</div>
+
+    <div class="question">What is 1 rem in mobile?</div>
+    <div class="answer">The value of 1 rem (root em) in mobile devices can vary depending on the device and its settings. However, by default, 1 rem is equal to 16 pixels, regardless of the device.</div>
+
+    <div class="question">How many pixels is 1.6 rem?</div>
+    <div class="answer">To determine the exact pixel value of 1.6 rem (root em), you need to know the base font size declared on the &lt;html&gt; element in CSS. Assuming the default base font size of 16 pixels, 1.6 rem would be equal to 25.6 pixels (16 x 1.6 = 25.6).</div>
+
+    <div class="question">When to use px vs em vs rem?</div>
+    <div class="answer">You should use pixels (px) when you want a fixed size that stays the same on all devices. Use em (em) when you want a size relative to the font size of the parent element. On the other hand, rem (root em) is best used when you want a size relative to the base font size of the document, making it a good option for responsive design.</div>
+
+    <div class="question">Why to use rem instead of px?</div>
+    <div class="answer">If you're wondering whether to use rem or px for your web design, choosing rem (root em) over px (pixels) can be a great idea. The reason is that rem is a flexible unit that adjusts to the base font size of the document, making your website more responsive and adaptable to different screen sizes and devices. This makes it easier to resize all elements on a page simultaneously. On the other hand, px is a fixed-size unit that can lead to inconsistent design across devices. Plus, rem makes your code easier to maintain and update in the long run.</div>
+    </div>
+
+
+
+    </div>
+    </div>
+    <footer>
+        
+        <div class="footer">
+            <p>&copy; 2023 pxtorem.pro | All Rights Reserved.</p>
+        </div>
+          
+      </footer>
+      
+    <script type="text/javascript" src="js/app.js"></script>
+
+</body>
+
+</html>
